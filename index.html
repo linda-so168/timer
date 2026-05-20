@@ -35,31 +35,31 @@
         .animate-stop { animation: custom-pulse 0.8s infinite; }
     </style>
 </head>
-<body class="h-screen w-full bg-slate-50 flex flex-col overflow-hidden font-sans">
+<body class="min-h-screen w-full bg-slate-50 flex flex-col overflow-x-hidden font-sans">
 
-    <header class="flex justify-between items-center px-12 py-2 bg-white border-b-4 border-msdNavy shadow-sm z-10">
-        <div class="flex items-center gap-4">
-            <img src="image copy.png" class="h-20 w-auto" alt="MSD Logo">
-            <div class="h-10 w-0.5 bg-slate-200"></div>
+    <header class="flex flex-col gap-3 px-4 py-3 bg-white border-b-4 border-msdNavy shadow-sm z-10 sm:px-6 md:flex-row md:items-center md:justify-between md:px-12 md:py-2">
+        <div class="flex flex-col items-center gap-3 text-center sm:flex-row sm:justify-center md:text-left md:justify-start">
+            <img src="image copy.png" class="h-14 w-auto sm:h-16 md:h-20" alt="MSD Logo">
+            <div class="hidden h-10 w-0.5 bg-slate-200 sm:block"></div>
             <div class="leading-tight">
-                <h1 class="text-xl font-black text-msdSlate uppercase">Mathematics Outstanding Students Cambodia</h1>
-                <p class="text-xs font-bold text-msdNavy uppercase">2026 Cambodia &#183; FINAL ROUND</p>
+                <h1 class="text-sm font-black text-msdSlate uppercase sm:text-base md:text-l">Mathematics Outstanding Students Cambodia</h1>
+                <p class="text-[10px] font-bold text-msdNavy uppercase sm:text-xs">2026 Cambodia &#183; FINAL ROUND</p>
             </div>
         </div>
-        <div id="status-pill" class="font-extrabold text-slate-400 border-2 border-slate-200 px-5 py-2 rounded uppercase transition-all duration-300">
+        <div id="status-pill" class="self-center rounded border-2 border-slate-200 px-4 py-1.5 text-xs font-extrabold uppercase text-slate-400 transition-all duration-300 sm:text-sm md:self-auto md:px-5 md:py-2 md:text-base">
             READY
         </div>
     </header>
 
-    <main class="flex-1 flex justify-center items-center relative bg-[radial-gradient(circle_at_center,_#ffffff_0%,_#f1f5f9_100%)]">
+    <main class="relative flex flex-1 items-center justify-center bg-[radial-gradient(circle_at_center,_#ffffff_0%,_#f1f5f9_100%)] px-3 py-4 sm:px-6 sm:py-6">
         <div class="absolute inset-0 flex items-center justify-center pointer-events-none z-0">
-            <span class="text-[35vh] font-black text-msdNavy opacity-[0.03]">MOSC</span>
+            <span class="text-[18vh] font-black text-msdNavy opacity-[0.03] sm:text-[24vh] md:text-[30vh] lg:text-[35vh]">MOSC</span>
         </div>
 
-        <div id="timer" class="font-mono font-bold text-msdSlate z-10 flex items-end leading-none transition-colors duration-300">
-            <div id="m-val" class="text-[min(44vw,46vh)]">60</div><span class="font-sans text-[min(3.2vw,3.8vh)] text-slate-400 mx-4 lowercase mb-[3vh]">min</span>
-            <div class="text-[min(44vw,46vh)] text-slate-300">:</div>
-            <div id="s-val" class="text-[min(44vw,46vh)]">00</div><span class="font-sans text-[min(3.2vw,3.8vh)] text-slate-400 mx-4 lowercase mb-[3vh]">s</span>
+        <div id="timer" class="z-10 flex w-full max-w-[1850px] items-end justify-center gap-0 font-mono font-bold leading-none text-msdSlate transition-colors duration-300 sm:gap-1">
+            <div id="m-val" class="text-[min(32vw,24vh)] sm:text-[min(31vw,24vh)] md:text-[min(33vw,31vh)] lg:text-[min(37vw,43vh)] xl:text-[min(39vw,47vh)]">60</div><span class="mb-[2vh] mx-1 font-sans text-[clamp(0.85rem,2.2vw,2.5rem)] lowercase text-slate-600 sm:mx-3 sm:mb-[3vh]">min</span>
+            <div class="text-[min(32vw,24vh)] text-slate-300 sm:text-[min(31vw,24vh)] md:text-[min(33vw,31vh)] lg:text-[min(37vw,43vh)] xl:text-[min(39vw,47vh)]">:</div>
+            <div id="s-val" class="text-[min(32vw,24vh)] sm:text-[min(31vw,24vh)] md:text-[min(33vw,31vh)] lg:text-[min(37vw,43vh)] xl:text-[min(39vw,47vh)]">00</div><span class="mb-[2vh] mx-1 font-sans text-[clamp(0.85rem,2.2vw,2.5rem)] lowercase text-slate-600 sm:mx-3 sm:mb-[3vh]">s</span>
         </div>
     </main>
 
@@ -67,35 +67,35 @@
         <div id="progress-bar" class="h-full w-full bg-gradient-to-r from-msdNavy to-msdYellow transition-all duration-1000 linear"></div>
     </div>
 
-    <footer class="bg-white px-4 py-3 flex flex-wrap justify-center items-center gap-4 border-t border-slate-200 shadow-[0_-4px_10px_rgba(0,0,0,0.02)]">
-        <button id="audio-toggle" onclick="toggleAudio()" class="px-4 py-2 border border-slate-300 rounded-lg font-bold text-[11px] uppercase text-msdSlate hover:bg-slate-50 transition-all">
+    <footer class="flex flex-wrap items-center justify-center gap-2 border-t border-slate-200 bg-white px-3 py-3 shadow-[0_-4px_10px_rgba(0,0,0,0.02)] sm:gap-4 sm:px-4">
+        <button id="audio-toggle" onclick="toggleAudio()" class="min-w-[44px] rounded-lg border border-slate-300 px-4 py-2 text-[11px] font-bold uppercase text-msdSlate transition-all hover:bg-slate-50">
             &#128266; 
         </button>
-        <div class="h-6 w-px bg-slate-200"></div>
-        <button id="fullscreen-btn" onclick="toggleFullscreen()" class="px-4 py-2 border border-slate-300 rounded-lg font-bold text-[11px] uppercase text-msdSlate hover:bg-slate-50 transition-all">
+        <div class="hidden h-6 w-px bg-slate-200 sm:block"></div>
+        <button id="fullscreen-btn" onclick="toggleFullscreen()" class="min-w-[44px] rounded-lg border border-slate-300 px-4 py-2 text-[11px] font-bold uppercase text-msdSlate transition-all hover:bg-slate-50">
             &#9974; 
         </button>
-        <div class="h-6 w-px bg-slate-200"></div>
-        <div class="flex items-center gap-2">
+        <div class="hidden h-6 w-px bg-slate-200 sm:block"></div>
+        <div class="flex w-full items-center justify-center gap-2 sm:w-auto">
             
-            <input id="minutes-input" type="number" min="1" step="1" value="60" onchange="setMinutesFromInput()" class="w-20 px-2 py-2 border border-slate-300 rounded-lg bg-white text-center font-mono text-base font-bold text-msdSlate focus:outline-none focus:border-msdNavy">
-            <button id="add-minute-btn" onclick="addMinute()" class="px-4 py-2 bg-slate-100 text-msdSlate border border-slate-300 rounded-lg font-bold text-xs uppercase tracking-wider hover:bg-slate-200 transition-all">
+            <input id="minutes-input" type="number" min="1" step="1" value="60" onchange="setMinutesFromInput()" class="w-16 rounded-lg border border-slate-300 bg-white px-2 py-2 text-center font-mono text-sm font-bold text-msdSlate focus:border-msdNavy focus:outline-none sm:w-20 sm:text-base">
+            <button id="add-minute-btn" onclick="addMinute()" class="rounded-lg border border-slate-300 bg-slate-100 px-4 py-2 text-xs font-bold uppercase tracking-wider text-msdSlate transition-all hover:bg-slate-200">
                 +1 Min
             </button>
         </div>
-        <div class="h-6 w-px bg-slate-200"></div>
-        <button id="start-btn" onclick="toggleTimer()" class="btn-start px-5 py-2 bg-msdNavy text-white rounded-lg font-bold text-xs uppercase tracking-wider hover:-translate-y-0.5 transition-all">
+        <div class="hidden h-6 w-px bg-slate-200 sm:block"></div>
+        <button id="start-btn" onclick="toggleTimer()" class="btn-start rounded-lg bg-msdNavy px-5 py-2 text-xs font-bold uppercase tracking-wider text-white transition-all hover:-translate-y-0.5">
             &#9654; 
         </button>
-        <button onclick="resetTimer()" class="px-5 py-2 bg-slate-100 text-msdSlate border border-slate-300 rounded-lg font-bold text-xs uppercase tracking-wider hover:bg-slate-200 transition-all">
+        <button onclick="resetTimer()" class="rounded-lg border border-slate-300 bg-slate-100 px-5 py-2 text-xs font-bold uppercase tracking-wider text-msdSlate transition-all hover:bg-slate-200">
             &#8635; 
         </button>
     </footer>
 
     <div id="time-up-screen" class="fixed inset-0 bg-msdYellow hidden flex-col justify-center items-center z-[100]">
-        <h2 class="text-[12vw] font-black text-white m-0 tracking-[6px] animate-stop">TIME UP!!</h2>
-        <p class="text-[2vw] font-extrabold text-msdNavy tracking-[4px] uppercase">Please stop writing immediately</p>
-        <button onclick="resetTimer()" class="mt-8 px-8 py-3 bg-white text-msdNavy rounded-lg font-bold text-sm uppercase shadow-lg hover:scale-105 transition-all">
+        <h2 class="m-0 px-4 text-center text-[18vw] font-black tracking-[4px] text-white animate-stop sm:text-[14vw] md:text-[12vw] md:tracking-[6px]">TIME UP!!</h2>
+        <p class="px-6 text-center text-[4.5vw] font-extrabold uppercase tracking-[2px] text-msdNavy sm:text-[3vw] md:text-[2vw] md:tracking-[4px]">Please stop writing immediately</p>
+        <button onclick="resetTimer()" class="mt-6 rounded-lg bg-white px-6 py-3 text-sm font-bold uppercase text-msdNavy shadow-lg transition-all hover:scale-105 sm:mt-8 sm:px-8">
             Close &amp; Reset
         </button>
     </div>
@@ -108,11 +108,12 @@
     let timerInterval = null;
     let audioEnabled = true;
     let audioPrimed = false;
+    let tickResetTimeout = null;
 
     // Audio files
     const tickSound = new Audio('slow-cinematic-clock-ticking-357979.mp3');
     const alarmSound = new Audio('kitchen-timer-33043.mp3');
-    tickSound.loop = true;
+    tickSound.loop = false;
     alarmSound.loop = true;
     tickSound.preload = 'auto';
     alarmSound.preload = 'auto';
@@ -165,28 +166,32 @@
 
     function setReadyStatus() {
         statusPill.innerText = "READY";
-        statusPill.className = "font-extrabold text-slate-400 border-2 border-slate-200 px-5 py-2 rounded uppercase transition-all duration-300";
+        statusPill.className = "self-center rounded border-2 border-slate-200 px-4 py-1.5 text-xs font-extrabold uppercase text-slate-400 transition-all duration-300 sm:text-sm md:self-auto md:px-5 md:py-2 md:text-base";
     }
 
     function setPausedStatus() {
         statusPill.innerText = "PAUSED";
-        statusPill.className = "font-extrabold text-msdYellow border-2 border-msdYellow px-5 py-2 rounded uppercase transition-all duration-300";
+        statusPill.className = "self-center rounded border-2 border-msdYellow px-4 py-1.5 text-xs font-extrabold uppercase text-msdYellow transition-all duration-300 sm:text-sm md:self-auto md:px-5 md:py-2 md:text-base";
     }
 
     function setLiveStatus() {
         statusPill.innerText = "LIVE";
-        statusPill.className = "font-extrabold text-green-600 border-2 border-green-600 px-5 py-2 rounded uppercase transition-all duration-300";
+        statusPill.className = "self-center rounded border-2 border-green-600 px-4 py-1.5 text-xs font-extrabold uppercase text-green-600 transition-all duration-300 sm:text-sm md:self-auto md:px-5 md:py-2 md:text-base";
     }
 
     function setFinishedStatus() {
         statusPill.innerText = "FINISHED";
-        statusPill.className = "font-extrabold text-red-600 border-2 border-red-600 px-5 py-2 rounded uppercase transition-all duration-300";
+        statusPill.className = "self-center rounded border-2 border-red-600 px-4 py-1.5 text-xs font-extrabold uppercase text-red-600 transition-all duration-300 sm:text-sm md:self-auto md:px-5 md:py-2 md:text-base";
     }
 
     function updateFullscreenButton() {
         fullscreenBtn.innerHTML = document.fullscreenElement
             ? "&#10005;"
             : "&#9974;";
+    }
+
+    function updateAudioButton() {
+        audioToggleBtn.innerHTML = audioEnabled ? "&#128266;" : "&#128263;";
     }
 
     function getMinutesValue() {
@@ -202,6 +207,8 @@
     }
 
     function stopTickSound(resetPosition = false) {
+        clearTimeout(tickResetTimeout);
+        tickResetTimeout = null;
         tickSound.pause();
         if (resetPosition) {
             tickSound.currentTime = 0;
@@ -218,8 +225,12 @@
             return;
         }
         stopAlarmSound();
+        stopTickSound(true);
         tickSound.currentTime = 0;
         tickSound.play().catch(() => {});
+        tickResetTimeout = window.setTimeout(() => {
+            stopTickSound(true);
+        }, 900);
     }
 
     function playAlarmSound() {
@@ -308,6 +319,8 @@
 
             if (timeLeft === 0) {
                 finishTimer();
+            } else if (audioEnabled) {
+                playTickSound();
             }
         }, 1000);
 
@@ -315,11 +328,7 @@
         setLiveStatus();
 
         if (audioEnabled) {
-            primeAudio().finally(() => {
-                if (timerInterval) {
-                    playTickSound();
-                }
-            });
+            primeAudio();
         }
     }
 
@@ -341,7 +350,7 @@
         alertScreen.classList.replace('flex', 'hidden');
         stopTickSound(true);
         stopAlarmSound();
-        startBtn.className = "btn-start px-8 py-3 bg-msdNavy text-white rounded-lg font-bold text-sm uppercase tracking-wider hover:-translate-y-0.5 transition-all";
+        startBtn.className = "btn-start rounded-lg bg-msdNavy px-5 py-2 text-xs font-bold uppercase tracking-wider text-white transition-all hover:-translate-y-0.5";
         setStartButtonToStart();
         setReadyStatus();
         updateDisplay();
@@ -349,7 +358,7 @@
 
     function toggleAudio() {
         audioEnabled = !audioEnabled;
-        audioToggleBtn.innerHTML = audioEnabled ? "&#128266; " : "&#128263; ";
+        updateAudioButton();
 
         if (!audioEnabled) {
             stopTickSound(true);
@@ -358,9 +367,7 @@
         }
 
         primeAudio().finally(() => {
-            if (timerInterval) {
-                playTickSound();
-            } else if (timeLeft === 0 && !alertScreen.classList.contains('hidden')) {
+            if (timeLeft === 0 && !alertScreen.classList.contains('hidden')) {
                 playAlarmSound();
             }
         });
@@ -378,6 +385,7 @@
     document.addEventListener('fullscreenchange', updateFullscreenButton);
 
     syncMinutesInput();
+    updateAudioButton();
     updateFullscreenButton();
     updateDisplay();
 </script>
